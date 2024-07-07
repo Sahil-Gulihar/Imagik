@@ -5,7 +5,7 @@ export const Cards = () => {
   return (
     <section className="w-full flex bg-uff justify-center py-12 md:py-16 lg:py-20">
       <div className="container grid gap-8 px-4 md:grid-cols-2 lg:grid-cols-3 lg:px-6 xl:max-w-6xl">
-        <div className="relative overflow-hidden bg-sheesh transition-transform duration-300 ease-in-out group-hover:scale-110 rounded-lg group">
+        <div className="z-0 relative overflow-hidden bg-sheesh transition-transform duration-300 ease-in-out group-hover:scale-110 rounded-lg group">
           <Link href="rm-bg" className="absolute inset-0 z-10" prefetch={false}>
             <span className="sr-only">Fuck You</span>
           </Link>
@@ -56,7 +56,7 @@ export const Cards = () => {
             alt="Product 3"
             width={400}
             height={300}
-            className="object-cover w-full h-60 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-50"
+            className="z-0 object-cover w-full h-60 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-50"
           />
           <div className="p-4">
             <h3 className="text-lg text-white font-semibold md:text-xl">

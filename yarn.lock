@@ -121,15 +121,10 @@
   dependencies:
     glob "10.3.10"
 
-"@next/swc-linux-x64-gnu@14.2.4":
+"@next/swc-win32-x64-msvc@14.2.4":
   version "14.2.4"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.2.4.tgz"
-  integrity sha512-ze0ShQDBPCqxLImzw4sCdfnB3lRmN3qGMB2GWDRlq5Wqy4G36pxtNOo2usu/Nm9+V2Rh/QQnrRc2l94kYFXO6Q==
-
-"@next/swc-linux-x64-musl@14.2.4":
-  version "14.2.4"
-  resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.2.4.tgz"
-  integrity sha512-8dwC0UJoc6fC7PX70csdaznVMNr16hQrTDAMPvLPloazlcaWfdPogq+UpZX6Drqb1OBlwowz8iG7WR0Tzk/diQ==
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.4.tgz"
+  integrity sha512-tkLrjBzqFTP8DVrAAQmZelEahfR9OxWpFR++vAI9FBhCiIxtwHwBHC23SBHCTURBtwB4kc/x44imVOnkKGNVGg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1265,10 +1260,10 @@ esutils@^2.0.2:
   resolved "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-exiftool-vendored.pl@12.85.0:
+exiftool-vendored.exe@12.85.0:
   version "12.85.0"
-  resolved "https://registry.npmjs.org/exiftool-vendored.pl/-/exiftool-vendored.pl-12.85.0.tgz"
-  integrity sha512-AelZQCCfl0a0g7PYx90TqbNGlSu2zDbRfCTjGw6bBBYnJF0NUfUWVhTpa8XGe2lHx1KYikH8AkJaey3esAxMAg==
+  resolved "https://registry.npmjs.org/exiftool-vendored.exe/-/exiftool-vendored.exe-12.85.0.tgz"
+  integrity sha512-rWsKVp9oXsS79S3bfCNXKeEo4av0xcd7slk/TfPpCa5pojg8ZVXSVfPZMAAlhOuK63YXrKN/e3jRNReeGP+2Gw==
 
 exiftool-vendored@^27.0.0:
   version "27.0.0"
