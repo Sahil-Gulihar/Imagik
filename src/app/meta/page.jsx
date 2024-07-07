@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import {Inspector} from 'react-inspector';
+import { Inspector } from 'react-inspector';
 import Navbar from '../../components/navbar';
 
 export default function ExifToolFrontend() {
@@ -28,7 +28,7 @@ export default function ExifToolFrontend() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('/api/exif', {
+      const response = await fetch('/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -58,7 +58,7 @@ export default function ExifToolFrontend() {
     <>
     <Navbar />
     <div className="font-sans bg-uff pt-28 min-h-screen flex flex-col items-center justify-items-start">
-  <h1 className="text-4xl font-bold mb-8 text-white">ExifTool Metadata Viewer</h1>
+  <h1 className="md:text-4xl text-2xl font-bold mb-8 text-white">ExifTool Metadata Viewer</h1>
   <div className="w-full max-w-2xl">
     <label className="block mb-6">
       <span className="sr-only">Choose file</span>

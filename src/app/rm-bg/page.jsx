@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
+import Navbar from '../../components/navbar';
 
 const ImageDropZone = ({ onImageUpload }) => {
   const [preview, setPreview] = useState(null);
@@ -109,12 +110,15 @@ const BG = () => {
   }
 
   return (
-    <div className="min-h-screen bg-uff flex flex-col items-center justify-center p-4">
-      <div className='text-white text-4xl py-12 font-serif'>Drop your Image</div>
+    <>
+    <Navbar />
+    <div className="min-h-screen bg-uff flex flex-col items-center pb-24 justify- p-4">
+    
+      <div className='text-white text-4xl pb-12 font-serif'>Drop your Image</div>
       <div className="w-full max-w-md">
         <ImageDropZone onImageUpload={ImageHandle} />
         {loading && (
-          <div className='text-center pt-4'>Loading Result...</div>
+          <div className='text-center text-gray-200 pt-4'>Loading Result...</div>
         )}
         {result && (
           <div className="mt-6 bg-gray-800 flex justify-center rounded-lg w-50 h-100 overflow-hidden shadow-xl">
@@ -128,6 +132,7 @@ const BG = () => {
       </div>
     
     </div>
+    </>
   );
 };
 
