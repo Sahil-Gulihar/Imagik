@@ -1,5 +1,5 @@
-import { exiftool } from 'exiftool-vendored';
 import formidable from 'formidable';
+import { exiftool } from 'exiftool-vendored';
 import fs from 'fs/promises';
 
 export const config = {
@@ -10,29 +10,40 @@ export const config = {
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  try {
-    const form = formidable();
-    const [fields, files] = await form.parse(req);
+  const form = new formidable.IncomingForm();
 
-    if (!files.file || !files.file[0]) {
+  form.parse(req, async (err, fields, files) => {
+    if (err) {
+      console.error('Formidable error:', err);
+      return res.status(500).json({ message: 'Form parsing error', error: err.toString() });
+    }
+
+    if (!files.file) {
       return res.status(400).json({ message: 'No file uploaded' });
     }
 
-    const file = files.file[0];
-    console.log('File received:', file.filepath);
+    const file = files.file;
+    const filePath = Array.isArray(file) ? file[0].filepath : file.filepath;
 
-    const metadata = await exiftool.read(file.filepath);
-    console.log('Metadata read successfully');
+    if (!filePath) {
+      console.error('File path is undefined');
+      return res.status(500).json({ message: 'File path is undefined' });
+    }
 
-    await fs.unlink(file.filepath);
-    console.log('Temporary file deleted');
+    console.log('File received:', filePath);
 
-    res.status(200).json(metadata);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Server error', error: error.toString() });
-  }
+    try {
+      const metadata = await exiftool.read(filePath);
+      console.log('Metadata read successfully');
+      await fs.unlink(filePath);
+      console.log('Temporary file deleted');
+      res.status(200).json(metadata);
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message: 'Server error', error: error.toString() });
+    }
+  });
 }

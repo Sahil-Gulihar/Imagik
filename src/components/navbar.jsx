@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   return (
-    <div className="flex bg-uff border border-gray-100 border-t-0 border-l-0 border-r-0 border-b-1 justify-between px-14">
+    <div className="flex bg-uff border border-gray-100 border-t-0 border-l-0 border-r-0 border-b-1 justify-between  sm:px-8 md:px-14">
       <div className="text-white py-4 flex-start flex gap-2">
         <Link href='/'>
         <Image
@@ -45,7 +45,7 @@ const Navbar = () => {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-sheesh ring-1 ring-black ring-opacity-5">
+        <div className="absolute left-0 mt-2 w-56 z-50 rounded-md shadow-lg bg-sheesh ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             <a href="/" className="block px-4 py-2 text-sm text-white hover:bg-gray-700" role="menuitem">All tools</a>
             <a href="/meta" className="block px-4 py-2 text-sm text-white hover:bg-gray-700" role="menuitem">Exif Tool</a>
@@ -58,11 +58,12 @@ const Navbar = () => {
       )}
     </div>
         <Link href="https://www.linkedin.com/in/sahil-gulihar-130573249/">
-          <img
+          <Image
             src="https://i.imgur.com/rTmhUoK.png"
             alt="github"
             height={20}
             width={40}
+            className="hidden md:block"
           />{" "}
         </Link>{" "}
         <Link href="https://github.com/sahil-gulihar">

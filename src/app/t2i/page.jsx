@@ -35,6 +35,8 @@ export default function Text2Image() {
     <>
       <Navbar />
       <div className="bg-uff min-h-screen flex flex-col items-center p-8">
+
+        <div className="text-white font-serif sm:text-2xl md:text-4xl md:p-12 p-4">Text to Image AI</div>
         <form 
           onSubmit={handleSubmit}
           className="w-full max-w-md mb-8"
