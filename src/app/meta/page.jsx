@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { Inspector } from 'react-inspector';
+import {Inspector} from 'react-inspector';
 import Navbar from '../../components/navbar';
 
 export default function ExifToolFrontend() {
@@ -28,7 +28,7 @@ export default function ExifToolFrontend() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('https://exif-server-2.onrender.com/upload', {
         method: 'POST',
         body: formData,
       });
